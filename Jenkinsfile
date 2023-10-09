@@ -1,7 +1,7 @@
 pipeline {
 	// agent any
-	// agent { docker { image 'maven:3.9.5' } }
-	agent { docker { image 'mcr.microsoft.com/openjdk/jdk:11-ubuntu' } }
+	agent { docker { image 'maven:3.9.5' } }
+	//agent { docker { image 'mcr.microsoft.com/openjdk/jdk:11-ubuntu' } }
 
 	environment {
 		dockerHome = tool "myDocker"
