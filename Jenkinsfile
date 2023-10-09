@@ -14,7 +14,7 @@ pipeline {
 			steps {
 				// sh "mvn --version"
 				// sh "docker version"
-				sh "apk add openjdk11"
+				sh "sudo apk add openjdk11"
 				sh "java --version"
 				echo "Build"
 				echo "PATH - $PATH"
