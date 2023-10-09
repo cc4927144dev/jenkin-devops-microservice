@@ -1,7 +1,7 @@
 pipeline {
 	// agent any
 	// agent { docker { image 'maven:3.9.5' } }
-	agent { docker { image 'adoptopenjdk/openjdk8:jre8u282-b08' } }
+	agent { docker { image 'alpine:latest' } }
 
 	environment {
 		dockerHome = tool "myDocker"
@@ -14,6 +14,7 @@ pipeline {
 			steps {
 				// sh "mvn --version"
 				// sh "docker version"
+				sh "apk add openjdk11"
 				sh "java --version"
 				echo "Build"
 				echo "PATH - $PATH"
