@@ -1,7 +1,7 @@
 pipeline {
-	// agent any
-	agent { docker { image 'maven:3.6.3' } }
-	//agent { docker { image 'mcr.microsoft.com/openjdk/jdk:11-ubuntu' } }
+	agent any
+	// agent { docker { image 'maven:3.9.5' } }
+	// agent { docker { image 'node:13.8' } }
 
 	environment {
 		dockerHome = tool "myDocker"
@@ -14,7 +14,6 @@ pipeline {
 			steps {
 				sh "mvn --version"
 				sh "docker version"
-				sh "java --version"
 				echo "Build"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
@@ -31,11 +30,11 @@ pipeline {
 			}
 		}
 
-		// stage("Test") {
-		// 	steps {
-		// 		sh "mvn test"
-		// 	}
-		// }
+		stage("Test") {
+			steps {
+				sh "mvn test"
+			}
+		}
 
 		// stage("Integration Test") {
 		// 	steps {

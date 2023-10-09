@@ -29,7 +29,7 @@
 		<surefire.version>2.22.1</surefire.version>
 		<failsafe.version>2.22.1</failsafe.version>
 
-		<jacoco.version>0.8.3</jacoco.version>
+		<jacoco.version>0.8.8</jacoco.version>
 		<jacoco.path>${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar</jacoco.path>
 		<jacoco.utReport>${project.build.directory}/jacoco.exec</jacoco.utReport>
 		<jacoco.itReport>${project.build.directory}/jacoco-it.exec</jacoco.itReport>
@@ -103,13 +103,13 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>2.3.1</version>
+			<version>6.10.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>2.3.1</version>
+			<version>6.10.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -136,6 +136,11 @@
 			<version>4.1.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+        	<groupId>org.codehaus.groovy</groupId>
+        	<artifactId>groovy</artifactId>
+        	<version>3.0.8</version>
+    	</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -195,6 +200,7 @@
 					</includes>
 				</configuration>
 			</plugin>
+			
 			<!-- Docker -->
 			<!--<plugin> -->
 			<!--<groupId>com.spotify</groupId> -->
