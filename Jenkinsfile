@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	// agent { docker { image 'maven:3.9.5' } }
-	// agent { docker { image 'node:13.8' } }
+	agent { docker { image 'adoptopenjdk/openjdk8' } }
 
 	environment {
 		dockerHome = tool "myDocker"
