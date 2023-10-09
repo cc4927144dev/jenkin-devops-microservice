@@ -12,8 +12,8 @@ pipeline {
 	stages {
 		stage("Checkout") {
 			steps {
-				// sh "mvn --version"
-				// sh "docker version"
+				sh "mvn --version"
+				sh "docker version"
 				sh "java --version"
 				echo "Build"
 				echo "PATH - $PATH"
@@ -25,11 +25,11 @@ pipeline {
 			}
 		}
 
-		// stage("Compile") {
-		// 	steps {
-		// 		sh "mvn clean compile"
-		// 	}
-		// }
+		stage("Compile") {
+			steps {
+				sh "mvn clean compile"
+			}
+		}
 
 		// stage("Test") {
 		// 	steps {
